@@ -6,11 +6,11 @@ import AppRoutes from "./routes/AppRoutes";
 const TestLogin = ({ role }) => {
   const { login } = useAuth();
 
-  useEffect(() => {
-    if (role) {
-      login(role); // ✅ use the prop value
-    }
-  }, [login, role]);
+  // useEffect(() => {
+  //   if (role) {
+  //     login(role); // ✅ use the prop value
+  //   }
+  // }, [login, role]);
 
   return <AppRoutes />;
 };

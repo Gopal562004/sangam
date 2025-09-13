@@ -2,10 +2,13 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Icon from "../AppIcon";
 import Button from "../ui/Button";
+import RoleSwitchingModal from "./RoleSwitchingModal";
 
 const Header = ({ user = null, notifications = [], onLogout = () => {} }) => {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isRoleModalOpen, setIsRoleModalOpen] = useState(false);
+
   const userMenuRef = useRef(null);
   const location = useLocation();
   const navigate = useNavigate();
@@ -225,6 +228,18 @@ const Header = ({ user = null, notifications = [], onLogout = () => {} }) => {
                         <Icon name="Settings" size={16} className="mr-3" />
                         Settings
                       </Link>
+                      <Link
+                        to="#"
+                        onClick={() => setIsRoleModalOpen(true)}
+                        className="flex items-center px-4 py-2 text-sm text-popover-foreground hover:bg-muted transition-colors duration-200"
+                      >
+                        <Icon name="Repeat" size={16} className="mr-3" />
+                        Role-Switch
+                      </Link>
+                      <RoleSwitchingModal
+                        isOpen={isRoleModalOpen}
+                        onClose={() => setIsRoleModalOpen(false)}
+                      />
 
                       <div className="border-t border-border my-1"></div>
 
