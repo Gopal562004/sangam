@@ -11,6 +11,12 @@ const RoleSwitchingModal = ({ isOpen, onClose }) => {
   const handleRoleChange = (role) => {
     setSelectedRole(role);
   };
+  // //also save in this 
+  //   useEffect(() => {
+  //     if (role) {
+  //       login(role); // ✅ use the prop value
+  //     }
+  //   }, [login, role]);
 
   const handleConfirm = () => {
     if (selectedRole) {

@@ -13,7 +13,7 @@ const TestLogin = ({ role }) => {
   // }, [login, role]);
 
   return <AppRoutes />;
-};
+ };
 
 const App = () => {
   return (
